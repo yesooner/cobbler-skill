@@ -6,8 +6,8 @@
 
 <p align="center">
   <strong>📝 其他语言 / Other Languages:</strong><br>
-  <a href="https://yesooner.github.io/cobbler-skill/zh.html">中文</a> |
-  <a href="https://yesooner.github.io/cobbler-skill/en.html">English</a>
+  中文 |
+  <a href="./i18n/README.en.md">English</a>
 </p>
 
 ## 是什么
@@ -154,7 +154,8 @@ Cobbler 是一个帮助研究和优化本地 Skill/MCP/CLI 工具的 Skill，帮
 cobbler-skill/
 ├── SKILL.md                     # 主技能文件
 ├── README.md                   # 本文件
-├── README_EN.md                # English version
+├── i18n/
+│   └── README.en.md            # English version
 ├── references/
 │   ├── repo-analysis-checklist.md
 │   ├── local-plugin-coupling.md
