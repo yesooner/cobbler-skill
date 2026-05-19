@@ -1,7 +1,6 @@
 # 修鞋匠 Cobbler Skill
 
 > 让 AI 成为你的 Skill 研究助手
-
 > 适用所有主流 Coding Agent（OpenClaw / Codex / Claude Code / Cursor 等），不绑定特定 Agent。
 
 <p align="center">
