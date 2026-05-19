@@ -4,6 +4,12 @@
 
 **适用所有主流 Coding Agent（OpenClaw / Codex / Claude Code / Cursor 等），不绑定特定 Agent。**
 
+<p align="center">
+  <strong>📝 其他语言 / Other Languages:</strong><br>
+  <a href="https://yesooner.github.io/cobbler-skill/zh.html">中文</a> |
+  <a href="https://yesooner.github.io/cobbler-skill/en.html">English</a>
+</p>
+
 ## 是什么
 
 Cobbler 是一个帮助研究和优化本地 Skill/MCP/CLI 工具的 Skill，帮助你：
