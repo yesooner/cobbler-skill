@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cobbler Skill</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; max-width: 900px; margin: 0 auto; padding: 40px 20px; background: #0d1117; color: #c9d1d9; line-height: 1.6; }
+    h1, h2, h3 { color: #58a6ff; }
+    h1 { border-bottom: 2px solid #30363d; padding-bottom: 10px; }
+    h2 { border-bottom: 1px solid #30363d; padding-bottom: 8px; margin-top: 40px; }
+    h3 { color: #79c0ff; margin-top: 30px; }
+    table { border-collapse: collapse; width: 100%; margin: 15px 0; }
+    th, td { border: 1px solid #30363d; padding: 10px 14px; text-align: left; }
+    th { background: #161b22; color: #58a6ff; }
+    tr:nth-child(even) { background: #161b22; }
+    code { background: #161b22; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+    pre { background: #161b22; padding: 16px; border-radius: 8px; overflow-x: auto; margin: 15px 0; border: 1px solid #30363d; }
+    pre code { background: none; padding: 0; }
+    ul { margin: 10px 0; }
+    li { margin: 6px 0; }
+    .lang-switch { text-align: right; margin-bottom: 20px; }
+    .lang-switch a { color: #58a6ff; text-decoration: none; font-size: 0.9em; }
+    .lang-switch a:hover { text-decoration: underline; }
+    blockquote { border-left: 4px solid #30363d; margin: 15px 0; padding: 10px 20px; background: #161b22; border-radius: 0 8px 8px 0; }
+    .check { color: #3fb950; }
+    .cross { color: #f85149; }
+    hr { border: none; border-top: 1px solid #30363d; margin: 30px 0; }
+  </style>
+</head>
+<body>
+  <div class="lang-switch"><a href="index.html">← Language Switch / 语言切换</a></div>
+
+<h1>Cobbler Skill (修鞋匠)</h1>
+
+<blockquote>
+  <strong>Works with all major Coding Agents</strong> (OpenClaw / Codex / Claude Code / Cursor) — no agent lock-in.
+</blockquote>
+
+<h2>What It Is</h2>
+
+<p>Cobbler helps you research and optimize local Skill/MCP/CLI tools:</p>
+<ul>
+  <li>Parse GitHub/GitLab/Gitee repositories to understand tool ecosystem and framework design</li>
+  <li><strong>Python/Conda environment audit and library management</strong> — avoid recreating environments</li>
+  <li>Research whether local tools fit the target project</li>
+  <li>Diagnose and fix adaptation issues when any Agent calls local tools</li>
+  <li>Research and supplement capabilities missing from LLMs</li>
+</ul>
+
+<h2>Five Frameworks</h2>
+
+<h3>🔍 Framework 1: Parse GitHub Repository</h3>
+
+<p>Accept a GitHub URL and deeply analyze:</p>
+<ul>
+  <li>Project structure, entry points, core modules</li>
+  <li>Agent framework type (Plan-and-Execute, MRKL, ReAct, Toolformer, etc.)</li>
+  <li>Skill / MCP / CLI configuration patterns</li>
+  <li>Dependencies and version requirements</li>
+</ul>
+
+<p><strong>Triggers</strong> (any of):</p>
+<ul>
+  <li>"Research this repo"</li>
+  <li>"Analyze this GitHub project"</li>
+  <li>"What framework is this repo"</li>
+  <li>"Parse github"</li>
+  <li>"Analyze repository"</li>
+</ul>
+
+<h3>🐍 Framework 2: Python Environment Audit &amp; Library Management</h3>
+
+<p>Fully audit local Python environments to avoid duplicate library creation or conflicting virtual environments.</p>
+<ul>
+  <li>List all available Python interpreters with versions</li>
+  <li>List installed core libraries per interpreter</li>
+  <li>Check if target library is already installed</li>
+  <li>If new installation needed, <strong>require user confirmation</strong> to keep environment clean</li>
+  <li>Always reuse existing environments, never recreate</li>
+</ul>
+
+<p><strong>Triggers</strong> (any of):</p>
+<ul>
+  <li>"Check Python environment"</li>
+  <li>"Audit local Python environment"</li>
+  <li>"Is this library installed"</li>
+  <li>"Install xxx"</li>
+  <li>"python env"</li>
+  <li>"check env"</li>
+  <li>"pip list"</li>
+  <li>"Show me Python interpreters"</li>
+  <li>"Check if torch is installed"</li>
+  <li>"What pandas version do I have"</li>
+</ul>
+
+<h3>⚖️ Framework 3: Research Local Framework Suitability</h3>
+
+<p>Accept a GitHub repo + local implementation, research suitability:</p>
+<ul>
+  <li>Does the local framework match the target repo's design intent?</li>
+  <li>Are there functional conflicts or missing capabilities?</li>
+  <li>Is version compatible?</li>
+  <li>Clear verdict: ✅ Suitable / ⚠️ Needs modification / ❌ Not suitable</li>
+</ul>
+
+<p><strong>Triggers</strong> (any of):</p>
+<ul>
+  <li>"Check if local framework fits this project"</li>
+  <li>"Does my implementation work for this repo's skill"</li>
+  <li>"Check local suitability"</li>
+  <li>"Framework compatibility"</li>
+</ul>
+
+<h3>🔧 Framework 4: Research LLM Adaptation Bug</h3>
+
+<p>Diagnose issues when Codex / Claude Code / OpenClaw call local tools:</p>
+<ul>
+  <li>Skill: SKILL.md format errors, unclear trigger conditions, path issues</li>
+  <li>MCP: tool registration failures, protocol mismatches, env var errors</li>
+  <li>CLI: command not found, wrong arguments, Windows path issues</li>
+  <li>Locate root cause, provide diagnosis and fix plan</li>
+</ul>
+
+<p><strong>Triggers</strong> (any of):</p>
+<ul>
+  <li>"Error occurred"</li>
+  <li>"MCP failed to start"</li>
+  <li>"CLI command not found"</li>
+  <li>"Tool error"</li>
+  <li>"Debug this"</li>
+  <li>"Diagnose problem"</li>
+  <li>"Fix bug"</li>
+</ul>
+
+<h3>🩹 Framework 5: Research Capability Supplement</h3>
+
+<p>Research capabilities missing from local tool ecosystem:</p>
+<ul>
+  <li>Recommend needed Skill configurations</li>
+  <li>Generate bridging scripts or adapter code</li>
+  <li>Propose MCP server supplemental configs</li>
+  <li>Generate transformation code blocks</li>
+</ul>
+
+<p><strong>Triggers</strong> (any of):</p>
+<ul>
+  <li>"Missing this capability"</li>
+  <li>"What can LLMs not do"</li>
+  <li>"Supplement capability"</li>
+  <li>"Capability gap"</li>
+  <li>"What tools are needed"</li>
+</ul>
+
+<h2>Output Contract</h2>
+
+<p>All frameworks output structured reports with these mandatory sections:</p>
+
+<pre><code>1. Diagnosis — What is the current state? What problem exists?
+2. Research Plan — What steps will be taken? What tools will be used?
+3. Concrete Patches — Exact changes to make (file + line + content)
+4. Verification Commands — How to confirm the fix works?
+5. Conflict and Coupling Notes — What else is affected?
+6. Remaining Risks — What could go wrong?</code></pre>
+
+<h2>Quality Standards</h2>
+
+<ul>
+  <li><strong>Specificity</strong>: Each fix includes executable commands or exact file paths</li>
+  <li><strong>Verifiability</strong>: Each fix has a corresponding verification command</li>
+  <li><strong>Honesty</strong>: Unable to execute verification must state reason</li>
+  <li><strong>Completeness</strong>: Report must include conflict and risk sections</li>
+</ul>
+
+<h2>Quick Start</h2>
+
+<pre><code>Research this repo's framework: https://github.com/xxx/yyy
+
+Audit local Python environment - show interpreters and installed libraries
+
+Check if torch is installed
+
+Check if local framework fits this project (current dir has implementation)
+
+My OpenClaw MCP is broken, help me research
+
+Research missing local capabilities for this repo</code></pre>
+
+<h2>Directory Structure</h2>
+
+<pre><code>cobbler-skill/
+├── SKILL.md                     # Main skill file
+├── README.md                   # This file (English)
+├── README_EN.md                # Legacy English version
+├── README.zh-CN.md             # Chinese version
+├── index.html                  # Language selection page
+├── en.html                     # English (this page)
+├── zh.html                     # Chinese
+├── LICENSE                     # MIT License
+├── references/
+│   ├── repo-analysis-checklist.md
+│   ├── local-plugin-coupling.md
+│   ├── mcp-cli-debug-checklist.md
+│   ├── skill-maintenance-checklist.md
+│   └── python-env-checklist.md
+└── agents/
+    └── evaluator.md            # Core evaluation logic</code></pre>
+
+<h2>Scope</h2>
+
+<p><span class="check">✅ Cobbler Skill DOES:</span></p>
+<ul>
+  <li>GitHub/GitLab/Gitee repository parsing and framework analysis</li>
+  <li>Python/Conda environment audit and library management</li>
+  <li>Local tool suitability evaluation</li>
+  <li>Bug diagnosis and fix plan generation</li>
+  <li>Capability gap identification and supplement suggestions</li>
+</ul>
+
+<p><span class="cross">❌ Cobbler Skill DOES NOT:</span></p>
+<ul>
+  <li>Directly modify user local files (requires user confirmation)</li>
+  <li>Execute destructive operations (delete environment, uninstall packages)</li>
+  <li>Access unauthorized repositories or APIs</li>
+  <li>Generate compilable code (scripts can be generated, compilation requires user execution)</li>
+</ul>
+
+<h2>Referenced Project</h2>
+
+<p>Inspired by <a href="https://github.com/zhangyanxs/repo2skill" style="color:#58a6ff">repo2skill</a>. Different focus: repo2skill converts repos to Skills, Cobbler focuses on cross-repository Agent framework research.</p>
+
+<hr>
+<p style="color:#6e7681;text-align:center">MIT License · <a href="https://github.com/yesooner/cobbler-skill" style="color:#58a6ff">GitHub</a></p>
+
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cobbler Skill</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Microsoft YaHei', 'PingFang SC', sans-serif; max-width: 900px; margin: 0 auto; padding: 40px 20px; background: #0d1117; color: #c9d1d9; line-height: 1.6; }
+    h1, h2, h3 { color: #58a6ff; }
+    h1 { border-bottom: 2px solid #30363d; padding-bottom: 10px; }
+    h2 { border-bottom: 1px solid #30363d; padding-bottom: 8px; margin-top: 40px; }
+    h3 { color: #79c0ff; margin-top: 30px; }
+    table { border-collapse: collapse; width: 100%; margin: 15px 0; }
+    th, td { border: 1px solid #30363d; padding: 10px 14px; text-align: left; }
+    th { background: #161b22; color: #58a6ff; }
+    tr:nth-child(even) { background: #161b22; }
+    code { background: #161b22; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+    pre { background: #161b22; padding: 16px; border-radius: 8px; overflow-x: auto; margin: 15px 0; border: 1px solid #30363d; }
+    pre code { background: none; padding: 0; }
+    ul { margin: 10px 0; }
+    li { margin: 6px 0; }
+    .lang-switch { text-align: right; margin-bottom: 20px; }
+    .lang-switch a { color: #58a6ff; text-decoration: none; font-size: 0.9em; }
+    .lang-switch a:hover { text-decoration: underline; }
+    blockquote { border-left: 4px solid #30363d; margin: 15px 0; padding: 10px 20px; background: #161b22; border-radius: 0 8px 8px 0; }
+    .check { color: #3fb950; }
+    .cross { color: #f85149; }
+    hr { border: none; border-top: 1px solid #30363d; margin: 30px 0; }
+  </style>
+</head>
+<body>
+  <div class="lang-switch"><a href="index.html">← Language Switch / 语言切换</a></div>
+
+<h1>修鞋匠 Cobbler Skill</h1>
+
+<blockquote>
+  <strong>适用所有主流 Coding Agent</strong>（OpenClaw / Codex / Claude Code / Cursor 等），不绑定特定 Agent。
+</blockquote>
+
+<h2>是什么</h2>
+
+<p>Cobbler 是一个帮助研究和优化本地 Skill/MCP/CLI 工具的 Skill，帮助你：</p>
+<ul>
+  <li>解析 GitHub/GitLab/Gitee 仓库，理解其工具生态和框架设计</li>
+  <li><strong>本地 Python 环境审计与库管理</strong>，避免重复创建环境</li>
+  <li>研究本地工具与目标项目的适配程度</li>
+  <li>诊断并修复任意 Agent 调用本地工具的适配问题</li>
+  <li>研究并补充大模型缺失的本地能力</li>
+</ul>
+
+<h2>五个框架</h2>
+
+<h3>🔍 框架一：解析 GitHub 仓库</h3>
+
+<p>传入 GitHub URL，深入研究并产出结构化分析报告：</p>
+<ul>
+  <li>项目结构、入口文件、核心模块</li>
+  <li>Agent 框架类型（Plan-and-Execute、MRKL、ReAct、Toolformer 等）</li>
+  <li>Skill / MCP / CLI 配置方式</li>
+  <li>依赖和版本要求</li>
+</ul>
+
+<p><strong>触发条件</strong>（以下任一表述都触发）：</p>
+<ul>
+  <li>"研究这个仓库"</li>
+  <li>"分析这个 GitHub 项目"</li>
+  <li>"帮我看看这个 repo 的结构"</li>
+  <li>"这个仓库是什么框架"</li>
+  <li>"parse github"</li>
+  <li>"分析仓库"</li>
+</ul>
+
+<h3>🐍 框架二：Python 环境检索与库管理</h3>
+
+<p>全面审计本地 Python 环境，避免重复创建库或创建冲突的虚拟环境。</p>
+<ul>
+  <li>列出所有可用 Python 解释器路径和版本</li>
+  <li>列出每个解释器中已安装的核心库版本</li>
+  <li>检查目标库是否已安装</li>
+  <li>若需安装新库，<strong>必须与人交互确认</strong>，确保环境干净</li>
+  <li>始终优先复用已有环境，不重复创建</li>
+</ul>
+
+<p><strong>触发条件</strong>（以下任一表述都触发）：</p>
+<ul>
+  <li>"检查 Python 环境"</li>
+  <li>"审计本地 Python 环境"</li>
+  <li>"这个库安装了没"</li>
+  <li>"帮我安装 xxx"</li>
+  <li>"python 环境"</li>
+  <li>"check env"</li>
+  <li>"pip list"</li>
+  <li>"查看有哪些 Python 解释器"</li>
+  <li>"检查 torch 是否已安装"</li>
+  <li>"帮我看看 pandas 版本"</li>
+</ul>
+
+<h3>⚖️ 框架三：研究本地框架适配度</h3>
+
+<p>传入 GitHub 仓库 + 本地已有实现，研究适配程度：</p>
+<ul>
+  <li>本地框架是否匹配目标仓库的设计意图？</li>
+  <li>是否有功能冲突或能力缺失？</li>
+  <li>版本是否兼容？</li>
+  <li>给出明确结论：✅ 适合 / ⚠️ 需改造 / ❌ 不适合</li>
+</ul>
+
+<p><strong>触发条件</strong>（以下任一表述都触发）：</p>
+<ul>
+  <li>"本地框架是否适合这个项目"</li>
+  <li>"我的实现能跑这个仓库的 skill 吗"</li>
+  <li>"检查本地适配度"</li>
+  <li>"框架适配"</li>
+  <li>"check suitability"</li>
+</ul>
+
+<h3>🔧 框架四：研究大模型适配 Bug</h3>
+
+<p>诊断 Codex / Claude Code / OpenClaw 调用本地工具时的问题：</p>
+<ul>
+  <li>Skill：SKILL.md 格式错误、触发条件不明确、路径问题</li>
+  <li>MCP：工具注册失败、协议不匹配、环境变量错误</li>
+  <li>CLI：命令找不到、参数错误、Windows 路径问题</li>
+  <li>定位根因，给出诊断和修复方案</li>
+</ul>
+
+<p><strong>触发条件</strong>（以下任一表述都触发）：</p>
+<ul>
+  <li>"报错了"</li>
+  <li>"MCP 启动失败"</li>
+  <li>"CLI 命令找不到"</li>
+  <li>"工具出错"</li>
+  <li>"debug"</li>
+  <li>"诊断问题"</li>
+  <li>"修复 bug"</li>
+</ul>
+
+<h3>🩹 框架五：研究能力补充</h3>
+
+<p>研究本地工具生态中大模型原生不具备的能力：</p>
+<ul>
+  <li>推荐需要补充的 Skill 配置</li>
+  <li>生成桥接脚本或适配层代码</li>
+  <li>提出 MCP server 补充配置</li>
+  <li>生成改造步骤代码块</li>
+</ul>
+
+<p><strong>触发条件</strong>（以下任一表述都触发）：</p>
+<ul>
+  <li>"缺少这个能力"</li>
+  <li>"大模型做不到什么"</li>
+  <li>"补充能力"</li>
+  <li>"能力缺失"</li>
+  <li>"supplement capability"</li>
+  <li>"缺少工具"</li>
+</ul>
+
+<h2>输出约定</h2>
+
+<p>所有框架输出包含以下强制部分：</p>
+
+<pre><code>1. 诊断 — 当前状态是什么？存在什么问题？
+2. 研究计划 — 将采取什么步骤？使用什么工具？
+3. 具体修复方案 — 精确的修改内容（文件 + 行号 + 内容）
+4. 验证命令 — 如何确认修复有效？
+5. 冲突和耦合说明 — 还影响什么？
+6. 残余风险 — 可能出现什么问题？</code></pre>
+
+<h2>输出质量标准</h2>
+
+<ul>
+  <li><strong>具体性</strong>：每个修复方案必须包含可执行的命令或精确的文件路径</li>
+  <li><strong>可验证</strong>：每个修复方案必须有对应的验证命令</li>
+  <li><strong>诚实性</strong>：无法执行的验证必须说明原因</li>
+  <li><strong>完整性</strong>：报告必须包含冲突说明和残余风险</li>
+</ul>
+
+<h2>快速开始</h2>
+
+<pre><code>帮我研究这个仓库的框架：https://github.com/xxx/yyy
+
+帮我审计本地 Python 环境，看看有哪些解释器和已装库
+
+检查 torch 是否已安装
+
+帮我研究本地框架是否适合这个项目（当前目录已有实现）
+
+我的 OpenClaw 调用这个 MCP 报错了，帮我研究一下
+
+帮我研究这个仓库缺失的本地能力</code></pre>
+
+<h2>目录结构</h2>
+
+<pre><code>cobbler-skill/
+├── SKILL.md                     # 主技能文件
+├── README.md                   # 英文版（GitHub 默认显示）
+├── README_EN.md                # 旧版英文（可删除）
+├── README.zh-CN.md             # 中文版
+├── index.html                  # 语言选择页
+├── en.html                     # 英文（当前页）
+├── zh.html                    # 中文
+├── LICENSE                     # MIT 协议
+├── references/
+│   ├── repo-analysis-checklist.md
+│   ├── local-plugin-coupling.md
+│   ├── mcp-cli-debug-checklist.md
+│   ├── skill-maintenance-checklist.md
+│   └── python-env-checklist.md
+└── agents/
+    └── evaluator.md            # 核心评估逻辑</code></pre>
+
+<h2>Skill 范围</h2>
+
+<p><span class="check">✅ 本 Skill 做：</span></p>
+<ul>
+  <li>GitHub/GitLab/Gitee 仓库解析和框架分析</li>
+  <li>Python/Conda 环境全面审计和库管理</li>
+  <li>本地工具适配度评估</li>
+  <li>Bug 诊断和修复方案生成</li>
+  <li>能力缺失识别和补充建议</li>
+</ul>
+
+<p><span class="cross">❌ 本 Skill 不做：</span></p>
+<ul>
+  <li>直接修改用户本地文件（需用户确认）</li>
+  <li>执行破坏性操作（如删除环境、卸载包）</li>
+  <li>访问未授权的仓库或 API</li>
+  <li>生成需要编译的代码（生成脚本可以，编译需用户执行）</li>
+</ul>
+
+<h2>参考项目</h2>
+
+<p>本 Skill 参考 <a href="https://github.com/zhangyanxs/repo2skill" style="color:#58a6ff">repo2skill</a> 仓库解析思路构建，但定位不同：repo2skill 侧重将仓库转换为 Skill，本 Skill 侧重跨仓库的 Agent 框架研究与互修。</p>
+
+<hr>
+<p style="color:#6e7681;text-align:center">MIT License · <a href="https://github.com/yesooner/cobbler-skill" style="color:#58a6ff">GitHub</a></p>
+
+</body>
+</html>
