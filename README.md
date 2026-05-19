@@ -4,7 +4,7 @@
 > 适用所有主流 Coding Agent（OpenClaw / Codex / Claude Code / Cursor 等），不绑定特定 Agent。
 
 <p align="center">
-  <strong>📝 其他语言 / Other Languages:</strong><br>
+  <strong>📝 语言 / Languages:</strong><br>
   中文 |
   <a href="./i18n/README.en.md">English</a>
 </p>
@@ -184,6 +184,3 @@ cobbler-skill/
 
 本 Skill 参考 [repo2skill](https://github.com/zhangyanxs/repo2skill) 仓库解析思路构建，但定位不同：repo2skill 侧重将仓库转换为 Skill，本 Skill 侧重跨仓库的 Agent 框架研究与互修。
 
-## 许可
-
-MIT License
