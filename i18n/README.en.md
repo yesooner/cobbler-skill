@@ -5,8 +5,8 @@
 **Works with all major Coding Agents (OpenClaw / Codex / Claude Code / Cursor) without locking into one agent.**
 
 <p align="center">
-  <a href="../README.md"><img alt="中文" src="https://img.shields.io/badge/%E8%AF%AD%E8%A8%80-%E4%B8%AD%E6%96%87-blue"></a>
-  <a href="./README.en.md"><img alt="English" src="https://img.shields.io/badge/Language-English-lightgrey"></a>
+  <a href="./README.zh-CN.md"><img alt="中文" src="https://img.shields.io/badge/%E8%AF%AD%E8%A8%80-%E4%B8%AD%E6%96%87-lightgrey"></a>
+  <a href="../README.md"><img alt="English" src="https://img.shields.io/badge/Language-English-blue"></a>
   <a href="../LICENSE"><img alt="License" src="https://img.shields.io/badge/License-MIT-orange"></a>
 </p>
 
